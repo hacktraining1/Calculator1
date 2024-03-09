@@ -1,3 +1,3 @@
 # Calculator1
 Training project
-zdr sa60
+zdr sa60!
