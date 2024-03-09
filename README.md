@@ -1,3 +1,3 @@
 # Calculator1
-Training project \n
+Training project
 zdr sa60!
