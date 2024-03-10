@@ -1,0 +1,10 @@
+@startuml
+class Client
+class Window
+class RenderWindow
+class GenerateOutlook
+Client -> Window
+Window *--> RenderWindow
+Window o-> GenerateOutlook
+
+@enduml
