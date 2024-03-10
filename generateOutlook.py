@@ -11,5 +11,5 @@ def generateOutlook(window):
     entry1.pack(pady=10)
     entry2 = generateWidget(window, "Entry")
     entry2.pack(pady=10)
-    button = generateWidget(window, "Button", text="Click me!", command=lambda: calculate(entry1, entry2, "addition"))
+    button = generateWidget(window, "Button", text="Click me!", command=lambda: calculate(entry1, entry2, "division"))
     button.pack(pady=10)
