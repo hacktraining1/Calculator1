@@ -1,15 +1,19 @@
+import tkinter as tk
+
 from widgetFactory import generateWidget
-from operations import calculate
+from ButtonFactory import generateButtons
 def generateOutlook(window):
-    # TODO DRY CODE - FIX
-    # TODO SEE IF ALL CLASSES HAVE A COMMON ANCESTOR
-    label1 = generateWidget(window, "Label", text="Input 1:")
-    label1.pack(side="left", padx = (5,10))
-    label2 = generateWidget(window, "Label", text="Input 2:")
-    label2.pack(side="left", padx = (10,5))
-    entry1 = generateWidget(window, "Entry")
-    entry1.pack(pady=10)
-    entry2 = generateWidget(window, "Entry")
-    entry2.pack(pady=10)
-    button = generateWidget(window, "Button", text="Click me!", command=lambda: calculate(entry1, entry2, "division"))
-    button.pack(pady=10)
+    entries = generateInput(window)
+    generateButtons(window, entries[0], entries[1])
+def generateInput(window):
+    label_names = ["Input 1:", "Input 2:"]
+    entries = []
+    input_frame = tk.Frame(window)
+    for label_name in label_names:
+        label = generateWidget(input_frame, "Label", text=label_name)
+        entry = generateWidget(input_frame, "Entry")
+        entries.append(entry)
+        label.pack()
+        entry.pack()
+    input_frame.pack()
+    return entries
